@@ -1,0 +1,41 @@
+{
+  "name": "quizify-electron",
+  "version": "1.0.0",
+  "description": "Application that processes a config file and produces a quiz.",
+  "main": "build/electron/main.js",
+  "private": true,
+  "scripts": {
+    "build-react": "cp -R ../quizify-client/build ./",
+    "build-electron": "cp -r ./electron ./build",
+    "electron": "electron ./build/electron/main.js",
+    "create": "electron-builder"
+  },
+  "build": {
+    "extends": null,
+    "files": [
+      "build/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [],
+  "author": "Michael Ferns",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^18.2.0",
+    "electron-builder": "^23.0.3"
+  }
+}
